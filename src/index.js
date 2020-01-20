@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 // function Greeting() {
 //   return (
 //     //     <section>
@@ -24,7 +25,7 @@ import ReactDOM from "react-dom";
 // }
 function Books() {
   return (
-    <section>
+    <section className="books">
       <Book></Book>
       <Book></Book>
       <Book></Book>
@@ -34,7 +35,7 @@ function Books() {
 }
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <CoverImage />
       <Title />
       <Author />
@@ -47,7 +48,13 @@ const CoverImage = () => (
     src="https://images-na.ssl-images-amazon.com/images/I/71N4oeWwYlL._AC_UL200_SR200,200_.jpg"
   />
 );
-const Title = () => <h2>The wonkey donkey</h2>;
-const Author = () => <p>The wonkey Donkey</p>;
+const Title = () => (
+  <h2 style={{ fontSize: "16px", color: "yellow" }}>The wonkey donkey</h2>
+);
+const authorStyle = {
+  letterspacing: "10px",
+  color: "green"
+};
+const Author = () => <p style={authorStyle}>The wonkey Donkey</p>;
 
 ReactDOM.render(<Books />, document.getElementById("root"));
