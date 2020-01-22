@@ -28,11 +28,11 @@ const { name } = person;
 
 const showPerson = ({ name, age }) => console.log(name, age);
 
-showPerson(person);
+//showPerson(person);
 
-const Person = props => {
-  console.log(props);
-  const { name, job, age, company } = props.person;
+const Person = ({ person: { name, job, age, company } }) => {
+  // console.log(props);
+  //const { name, job, age, company } = props.person;
   //({ person: { name, job, age, company } }) => {
   //const { name, job, age, company } = props.person;
 
@@ -41,7 +41,7 @@ const Person = props => {
       <h1>{name}</h1>
       <p>{job}</p>
       <p>{age}</p>
-      <p>{props.person.company}</p>
+      <p>{company}</p>
       <hr />
     </article>
   );
